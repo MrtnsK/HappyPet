@@ -1,0 +1,18 @@
+name: HappyPet
+version: ${project.version}
+main: fr.kemartin.happypet.HappyPet
+api-version: '1.21'
+description: Adds FOLLOWING, SITTING, and PATROL modes to tamed dogs and cats.
+author: kemartin
+
+commands:
+  happypet:
+    description: HappyPet admin commands
+    usage: /happypet <reload|list|setmode>
+    aliases: [hp]
+    permission: happypet.admin
+
+permissions:
+  happypet.admin:
+    description: Access to /happypet admin commands
+    default: op
