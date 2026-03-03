@@ -1,0 +1,15 @@
+patrol_radius: 30
+patrol_check_interval: 100
+
+messages:
+  mode_following: "<green>Ton animal te <bold>SUIT</bold> maintenant."
+  mode_sitting:   "<yellow>Ton animal est <bold>ASSIS</bold>."
+  mode_patrol:    "<aqua>Ton animal <bold>PATROUILLE</bold> cette zone."
+  not_owner:      "<red>Ce n'est pas ton animal."
+  not_tamed:      "<red>Cet animal n'est pas apprivoisé."
+  reload_success: "<green>Configuration HappyPet rechargée."
+  setmode_success: "<green>Mode modifié avec succès."
+  setmode_invalid_mode: "<red>Mode invalide. Utilisez : FOLLOWING, SITTING, PATROL"
+  setmode_pet_not_found: "<red>Animal introuvable (chunk chargé ?)."
+  list_header:    "<gold>Animaux de <player> :"
+  list_entry:     "<gray> - <uuid> [<mode>]"
