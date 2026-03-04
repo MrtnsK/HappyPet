@@ -4,7 +4,7 @@ import fr.kemartin.happypet.HappyPet;
 import fr.kemartin.happypet.PetManager;
 import fr.kemartin.happypet.PetMode;
 import net.kyori.adventure.text.minimessage.MiniMessage;
-import org.bukkit.EquipmentSlot;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.entity.Cat;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;

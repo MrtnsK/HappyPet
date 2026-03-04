@@ -2,6 +2,7 @@ package fr.kemartin.happypet;
 
 import fr.kemartin.happypet.commands.HappyPetCommand;
 import fr.kemartin.happypet.listeners.PetInteractListener;
+import fr.kemartin.happypet.listeners.PetTeleportListener;
 import fr.kemartin.happypet.listeners.PlayerConnectionListener;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -18,6 +19,8 @@ public class HappyPet extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(
                 new PetInteractListener(this, petManager), this);
+        getServer().getPluginManager().registerEvents(
+                new PetTeleportListener(petManager), this);
         getServer().getPluginManager().registerEvents(
                 new PlayerConnectionListener(this, petManager), this);
 

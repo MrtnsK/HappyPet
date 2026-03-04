@@ -1,5 +1,5 @@
-patrol_radius: 30
-patrol_check_interval: 100
+patrol_radius: 15
+patrol_check_interval: 20
 
 messages:
   mode_following: "<green>Ton animal te <bold>SUIT</bold> maintenant."
