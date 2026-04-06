@@ -4,6 +4,7 @@ import fr.kemartin.happypet.HappyPet;
 import fr.kemartin.happypet.PetManager;
 import fr.kemartin.happypet.PetMode;
 import net.kyori.adventure.text.minimessage.MiniMessage;
+import org.bukkit.Material;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.entity.Cat;
 import org.bukkit.entity.Entity;
@@ -14,8 +15,28 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
+import org.bukkit.inventory.ItemStack;
+
+import java.util.Set;
 
 public class PetInteractListener implements Listener {
+
+    private static final Set<Material> VANILLA_INTERACT_ITEMS = Set.of(
+            // Renommage
+            Material.NAME_TAG,
+            // Nourriture chien
+            Material.BEEF, Material.COOKED_BEEF,
+            Material.CHICKEN, Material.COOKED_CHICKEN,
+            Material.MUTTON, Material.COOKED_MUTTON,
+            Material.PORKCHOP, Material.COOKED_PORKCHOP,
+            Material.RABBIT, Material.COOKED_RABBIT,
+            Material.ROTTEN_FLESH,
+            // Nourriture chat
+            Material.COD, Material.COOKED_COD,
+            Material.SALMON, Material.COOKED_SALMON,
+            // Armure chien (Wolf Armor)
+            Material.WOLF_ARMOR
+    );
 
     private final HappyPet plugin;
     private final PetManager petManager;
@@ -46,6 +67,10 @@ public class PetInteractListener implements Listener {
             event.setCancelled(true);
             return;
         }
+
+        // Laisser passer les actions vanilla : name tag, nourriture, armure
+        ItemStack held = player.getInventory().getItemInMainHand();
+        if (VANILLA_INTERACT_ITEMS.contains(held.getType())) return;
 
         PetMode currentMode = petManager.getMode(pet);
         PetMode nextMode = currentMode.next();
